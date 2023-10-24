@@ -12,6 +12,9 @@ services:
       context: requirements/transcendence
       dockerfile: Dockerfile
     restart: on-failure
+    ports:
+      - "5432:5432"
+      - "3000:3000"
     expose: 
       - "5432"
       - "3000"
