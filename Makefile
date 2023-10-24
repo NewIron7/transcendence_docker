@@ -17,4 +17,7 @@ fclean: clean
 
 re: fclean all
 
+debug:
+	docker run -it transcendence /bin/bash
+
 .Phony: all logs clean fclean
