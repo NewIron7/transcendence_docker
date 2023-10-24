@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  transcendence:
+    image: transcendence
+    container_name: transcendence
+    env_file: .env
+    volumes:
+    - transcendence:/transcendence
+    build: 
+      context: requirements/transcendence
+      dockerfile: Dockerfile
+    restart: on-failure
+    expose: 
+      - "5432"
+      - "3000"
+
+volumes:
+  transcendence:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/hboissel/data/transcendence'
