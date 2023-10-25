@@ -16,4 +16,6 @@ RUN export NODE_MAJOR=18 \
 RUN apt-get update \
  && apt-get install nodejs -y
 
+RUN apt install -y postgresql postgresql-client
+
 CMD [ "/bin/bash" ] 
