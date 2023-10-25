@@ -18,4 +18,6 @@ RUN apt-get update \
 
 RUN apt install -y postgresql postgresql-client
 
+RUN sh setupDB.sh
+
 CMD [ "/bin/bash" ] 
