@@ -7,7 +7,7 @@ services:
     container_name: transcendence
     env_file: .env
     volumes:
-    - transcendence:/home
+      - transcendence:/home
     build: 
       context: requirements/transcendence
       dockerfile: Dockerfile
