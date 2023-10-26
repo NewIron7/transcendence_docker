@@ -4,6 +4,6 @@ service postgresql start
 
 service postgresql status
 
-#su postgres
+su postgres
 
-#createdb transcendence_db
+createdb transcendence_db
