@@ -1,5 +1,5 @@
 all: 
-	mkdir -p /home/hboissel/data/transcendence
+	@-mkdir -p /home/hboissel/data/transcendence
 	@docker compose -f ./srcs/docker-compose.yml build
 	@docker compose -f ./srcs/docker-compose.yml up -d
 
@@ -18,10 +18,16 @@ fclean: clean
 
 re: fclean all
 
+afront:
+	@docker attach front
+
+aback:
+	@docker attach back
+
 front:
-	docker attach front
+	@docker exec -it front /bin/bash
 
 back:
-	docker attach back
+	@docker exec -it back /bin/bash
 
 .Phony: all logs clean fclean

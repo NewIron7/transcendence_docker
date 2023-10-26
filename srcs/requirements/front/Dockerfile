@@ -16,4 +16,6 @@ RUN export NODE_MAJOR=18 \
 RUN apt-get update \
  && apt-get install nodejs -y
 
+COPY setup.sh setup.sh
+
 CMD [ "/bin/bash" ] 
