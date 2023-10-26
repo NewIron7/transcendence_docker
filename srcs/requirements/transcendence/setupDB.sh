@@ -2,6 +2,6 @@
 
 service postgresql start
 
-su postgres
+#su postgres
 
-createdb transcendence_db
+#createdb transcendence_db
