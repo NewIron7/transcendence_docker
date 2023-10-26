@@ -2,14 +2,31 @@ version: '3'
 
 services:
 
-  transcendence:
-    image: transcendence
-    container_name: transcendence
+  front:
+    image: front
+    container_name: front
     env_file: .env
     volumes:
       - transcendence:/home
     build: 
-      context: requirements/transcendence
+      context: requirements/front
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "3001:3001"
+    expose: 
+      - "3001"
+    stdin_open: true
+    tty: true
+
+    back:
+    image: back
+    container_name: back
+    env_file: .env
+    volumes:
+      - transcendence:/home
+    build: 
+      context: requirements/back
       dockerfile: Dockerfile
     restart: on-failure
     ports:
