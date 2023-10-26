@@ -10,7 +10,7 @@ stop:
 	@docker compose -f ./srcs/docker-compose.yml stop
 
 clean: stop
-	@-docker container stop transcendence
+	@-docker container stop front back
 
 fclean: clean
 	@docker system prune -af
@@ -18,7 +18,10 @@ fclean: clean
 
 re: fclean all
 
-debug:
-	docker attach transcendence
+front:
+	docker attach front
+
+back:
+	docker attach back
 
 .Phony: all logs clean fclean
