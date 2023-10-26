@@ -1,7 +1,7 @@
 #!/bin/sh
 
-cd /home/ft_transcendence
+cd /home/ft_transcendence/front
 
 npm install
 
-npm run dev
+exec "$@"

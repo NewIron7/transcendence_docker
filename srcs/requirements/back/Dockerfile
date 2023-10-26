@@ -20,4 +20,6 @@ RUN apt install -y postgresql postgresql-client
 
 COPY setup.sh setup.sh
 
+ENTRYPOINT ["bash", "setup.sh"]
+
 CMD [ "/bin/bash" ] 

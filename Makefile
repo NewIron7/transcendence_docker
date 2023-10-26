@@ -4,7 +4,8 @@ all:
 	@docker compose -f ./srcs/docker-compose.yml up -d
 
 logs:
-	docker logs transcendence
+	docker logs front
+	docker logs back
 
 stop:
 	@docker compose -f ./srcs/docker-compose.yml stop

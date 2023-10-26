@@ -18,4 +18,7 @@ RUN apt-get update \
 
 COPY setup.sh setup.sh
 
+
+ENTRYPOINT ["bash", "setup.sh"]
+
 CMD [ "/bin/bash" ] 

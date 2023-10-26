@@ -1,19 +1,13 @@
 #!/bin/sh
 
-su postgres
+su -c 'service postgresql start' postgres
 
-service postgresql start
+su -c 'createdb transcendence_db' postgres
 
-service postgresql status
-
-createdb transcendence_db
-
-psql << EOF
+su -c "psql << EOF
 ALTER USER postgres PASSWORD 'qwerty123';
 \q
-EOF
-
-exit
+EOF" postgres
 
 cd /home/ft_transcendence/server
 
@@ -22,3 +16,5 @@ npm install
 npx prisma db push
 
 npx prisma db seed -- --environment development
+
+exec "$@"
