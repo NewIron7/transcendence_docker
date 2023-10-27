@@ -1,5 +1,5 @@
 all: 
-	@-mkdir -p /home/hboissel/data/transcendence
+	#@-mkdir -p /home/hboissel/data/transcendence
 	@docker compose -f ./srcs/docker-compose.yml build
 	@docker compose -f ./srcs/docker-compose.yml up -d
 

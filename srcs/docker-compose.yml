@@ -44,4 +44,5 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/mnt/nfs/homes/hboissel/data'
+        #device: '/mnt/nfs/homes/hboissel/data'
+      device: '/home/hboissel/data'
