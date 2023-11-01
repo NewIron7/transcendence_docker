@@ -1,5 +1,6 @@
-all: 
+all:	
 	#@-mkdir -p /home/hboissel/data/transcendence
+	/bin/bash srcs/config.sh
 	@docker compose -f ./srcs/docker-compose.yml build
 	@docker compose -f ./srcs/docker-compose.yml up -d
 
